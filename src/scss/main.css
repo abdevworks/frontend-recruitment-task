@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Neucha&family=Roboto:wght@300;500;700&display=swap");
-
-$dark: #121212;
-$primary: #e4c1ae;
-
 * {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   padding: 0;
@@ -13,10 +9,19 @@ $primary: #e4c1ae;
   max-width: 1440px;
   margin: 0 auto;
   padding-top: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .section__left,
@@ -34,19 +39,19 @@ $primary: #e4c1ae;
   margin-bottom: 0.5em;
   font-size: 30px;
   font-weight: 700;
-  color: $dark;
+  color: #121212;
 }
 
 .section__description {
   margin-bottom: 1.5em;
   font-weight: 300;
   font-size: 16px;
-  color: $dark;
+  color: #121212;
 }
 
 .section__button {
   color: white;
-  background-color: $primary;
+  background-color: #e4c1ae;
   border: none;
   border-radius: 32px;
   padding: 16px 40px;
@@ -65,9 +70,15 @@ $primary: #e4c1ae;
 
 @media screen and (min-width: 1440px) {
   .section {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     padding: 2em 10em;
     margin-top: 96px;
   }
@@ -78,12 +89,11 @@ $primary: #e4c1ae;
   .section__left {
     margin-bottom: 0;
   }
-
   .section__title {
     font-size: 42px;
   }
-
   .section__description {
     font-size: 16px;
   }
 }
+/*# sourceMappingURL=main.css.map */
