@@ -69,6 +69,10 @@ $primary: #e4c1ae;
   margin-left: auto;
   margin-right: auto;
   visibility: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   &.show {
     visibility: visible;
@@ -92,17 +96,34 @@ $primary: #e4c1ae;
   font-weight: 300;
 }
 
-.alert__button {
+.alert__buttons {
   flex: 1;
   display: flex;
-  justify-content: end;
+  flex-direction: column;
+  align-content: flex-end;
   font-size: 1.3em;
   font-weight: 300;
   padding: 2em 2.5em;
 
-  span {
+  #alert-closeButton {
     cursor: pointer;
     height: fit-content;
+    align-self: flex-end;
+    flex: 1;
+  }
+
+  #alert-resetButton {
+    cursor: pointer;
+    align-self: flex-end;
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    color: red;
+    visibility: hidden;
+
+    &.show {
+      visibility: visible;
+    }
   }
 }
 
