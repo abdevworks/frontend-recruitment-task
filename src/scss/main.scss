@@ -7,6 +7,7 @@ $primary: #e4c1ae;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   padding: 0;
   margin: 0;
+  color: $dark;
 }
 
 .section {
@@ -34,14 +35,12 @@ $primary: #e4c1ae;
   margin-bottom: 0.5em;
   font-size: 30px;
   font-weight: 700;
-  color: $dark;
 }
 
 .section__description {
   margin-bottom: 1.5em;
   font-weight: 300;
   font-size: 16px;
-  color: $dark;
 }
 
 .section__button {
@@ -50,6 +49,76 @@ $primary: #e4c1ae;
   border: none;
   border-radius: 32px;
   padding: 16px 40px;
+  cursor: pointer;
+}
+
+.section__button:active {
+  filter: brightness(1.1);
+}
+
+.alert {
+  display: flex;
+  background-color: whitesmoke;
+  height: 210px;
+  max-width: 920px;
+  position: absolute;
+  z-index: 999;
+  top: 375px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  visibility: hidden;
+
+  &.show {
+    visibility: visible;
+  }
+}
+
+.alert__messageContainer {
+  flex: 8;
+  padding: 3.5em 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.alert__title {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.alert__message {
+  font-weight: 300;
+}
+
+.alert__button {
+  flex: 1;
+  display: flex;
+  justify-content: end;
+  font-size: 1.3em;
+  font-weight: 300;
+  padding: 2em 2.5em;
+
+  span {
+    cursor: pointer;
+    height: fit-content;
+  }
+}
+
+.alert__shadow {
+  width: 100%;
+  height: 100%;
+  opacity: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $dark;
+  visibility: hidden;
+
+  &.show {
+    visibility: visible;
+  }
 }
 
 @media screen and (min-width: 784px) {
