@@ -11,43 +11,47 @@
     <link rel="stylesheet" href="src/scss/main.css" />
   </head>
   <body>
-    <section class="section">
-      <img
-        class="section__left"
-        srcset="
-          images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_784.jpg   784w,
-          images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_1002.jpg 1002w,
-          images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_1234.jpg 1234w,
-          images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_1394.jpg 1394w,
-          images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_1400.jpg 1400w
-        "
-        src="images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_480.jpg"
-        alt="ocean"
-      />
-      <div class="section__right">
-        <h1 class="section__title">Lorem Ipsum</h1>
-        <p class="section__description">
-          Infinitely scalable, feature-rich and cloud-native data management and
-          protection for modern and legacy infrastructures and SaaS platforms,
-          managed via a single app with no hardware required.
-        </p>
-        <button id="section-button" class="section__button">Button</button>
-      </div>
-    </section>
+    <div class="wrapper"></div>
+    <template class="sectionTemplate">
+      <section class="section">
+        <img
+          class="section__left"
+          srcset="
+            images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_784.jpg   784w,
+            images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_1002.jpg 1002w,
+            images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_1234.jpg 1234w,
+            images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_1394.jpg 1394w,
+            images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_1400.jpg 1400w
+          "
+          src="images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_480.jpg"
+          alt="ocean"
+        />
+        <div class="section__right">
+          <h1 class="section__title">Lorem Ipsum</h1>
+          <p class="section__description">
+            Infinitely scalable, feature-rich and cloud-native data management
+            and protection for modern and legacy infrastructures and SaaS
+            platforms, managed via a single app with no hardware required.
+          </p>
+          <button id="section-button" class="section__button">Button</button>
+        </div>
 
-    <div class="alert">
-      <div class="alert__messageContainer">
-        <h1 class="alert__title">Alert!</h1>
-        <p class="alert__message">
-          You have clicked <b id="alert-messageCounter">X times</b> to related button.
-        </p>
-      </div>
-      <div class="alert__buttons">
-        <span id="alert-closeButton">&#10006;</span>
-        <span id="alert-resetButton">Reset</span>
-      </div>
-    </div>
-    <div class="alert__shadow"></div>
+        <div class="alert">
+          <div class="alert__messageContainer">
+            <h1 class="alert__title">Alert!</h1>
+            <p class="alert__message">
+              You have clicked <b id="alert-messageCounter">X times</b> to
+              related button.
+            </p>
+          </div>
+          <div class="alert__buttons">
+            <span id="alert-closeButton">&#10006;</span>
+            <span id="alert-resetButton">Reset</span>
+          </div>
+        </div>
+        <div class="alert__shadow"></div>
+      </section>
+    </template>
 
     <script src="src/js/main.js" />
   </body>
