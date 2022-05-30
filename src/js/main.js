@@ -1,13 +1,13 @@
+import SECTIONS from "./SectionData.js";
+
 const sectionTemp = document.querySelector(".sectionTemplate");
 const wrapper = document.querySelector(".wrapper");
-const sectionButton = document.querySelector("#section-button");
-const alertCloseButton = document.querySelector("#alert-closeButton");
-const alertResetButton = document.querySelector("#alert-resetButton");
-const alertMessageCounter = document.querySelector("#alert-messageCounter");
-const alert = document.querySelector(".alert");
-const alertShadow = document.querySelector(".alert__shadow");
 
-function addMoreSections(section, sectionId) {
+
+function addMoreSections(section, sectionData) {
+  const sectionImage = section.querySelector(".section__left");
+  const sectionTitle = section.querySelector(".section__title");
+  const sectionDescription = section.querySelector(".section__description");
   const sectionButton = section.querySelector("#section-button");
   const alertCloseButton = section.querySelector("#alert-closeButton");
   const alertResetButton = section.querySelector("#alert-resetButton");
@@ -28,11 +28,17 @@ function addMoreSections(section, sectionId) {
     resetCounter();
   });
 
+  sectionImage.srcset = sectionData.image.srcset;
+  sectionImage.src = sectionData.image.src;
+  sectionImage.alt = sectionData.image.alt;
+  sectionTitle.textContent = sectionData.title
+  sectionDescription.textContent = sectionData.description;
+
   // Set initial state of alert
   let showAlert = false;
   let showReset = false;
   let alertClickCounter = 0;
-  alertClickCounter = sessionStorage.getItem(`${sectionId}+alertClickCounter`);
+  alertClickCounter = sessionStorage.getItem(`alertClickCounter${sectionData.id}`);
 
   function toggleAlert() {
     if (!showAlert) {
@@ -40,7 +46,10 @@ function addMoreSections(section, sectionId) {
       alertShadow.classList.add("show");
       alertClickCounter++;
       alertMessageCounter.textContent = `${alertClickCounter} times`;
-      sessionStorage.setItem(`${sectionId}+alertClickCounter`, alertClickCounter);
+      sessionStorage.setItem(
+        `alertClickCounter${sectionData.id}`,
+        alertClickCounter
+      );
       showAlert = true;
 
       if (alertClickCounter >= 5) {
@@ -58,13 +67,14 @@ function addMoreSections(section, sectionId) {
 
   function resetCounter() {
     alertClickCounter = 0;
-    sessionStorage.setItem(`${sectionId}+alertClickCounter`, alertClickCounter);
+    sessionStorage.setItem(`alertClickCounter${sectionData.id}`, alertClickCounter);
     toggleAlert();
   }
+
   wrapper.appendChild(section);
 }
 
-const section = sectionTemp.content.cloneNode(true);
-addMoreSections(section,"sectionOne");
-// const sectionTwo = sectionTemp.content.cloneNode(true);
-// addMoreSections(sectionTwo, "sectionTwo");
+SECTIONS.forEach(sectionData => {
+  const section = sectionTemp.content.cloneNode(true);
+  addMoreSections(section, sectionData);
+})
